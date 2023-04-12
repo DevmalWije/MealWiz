@@ -6,13 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/welcom_to_n_mealwiz"
+            android:layout_margin="10dp"
+            android:textSize="30sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            />
+        <Button
+            android:id="@+id/mealToDbButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_meal_to_db"
+            />
+        <Button
+            android:id="@+id/searchByIngredientButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_meal_by_ingredient"
+            />
+        <Button
+            android:id="@+id/searchForMealButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search_for_meal"
+            />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

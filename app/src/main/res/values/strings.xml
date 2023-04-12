@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MealWiz</string>
+    <string name="welcom_to_n_mealwiz">Welcom to\n MealWiz!</string>
+    <string name="add_meal_to_db">Add Meal To DB</string>
+    <string name="search_meal_by_ingredient">Search Meal By Ingredient</string>
+    <string name="search_for_meal">Search For Meal</string>
+    <string name="search_by_ingredient">Search by ingredient</string>
+    <string name="retrieve_meal">Retrieve Meal</string>
+    <string name="save_meal_to_db">Save meal to DB</string>
+    <string name="mealimage">mealImage</string>
 </resources>
