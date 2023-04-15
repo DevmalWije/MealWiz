@@ -2,107 +2,143 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="15dp"
     >
-
-    <RelativeLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         >
-
-        <ImageView
-            android:id="@+id/mealImage"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/pasta"
-            android:contentDescription="@string/mealimage" />
-
-        <TextView
-            android:id="@+id/mealName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mealImage"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="Spicy Arrabiata Penne"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/mealOrigin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mealImage"
-            android:layout_alignEnd="@id/mealImage"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="Italy"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/mealDiet"
-            android:layout_below="@id/mealName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:text="Vegetarian"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            />
-
-        <TextView
-            android:id="@+id/mealTags"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mealDiet"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginEnd="2dp"
-            android:layout_marginBottom="2dp"
-            android:text="#vivaLaItalia #pasta #shellfishfree #pescatarian #paleo #whole30 #keto #lowcarb #lowfat #lowcalorie #lowcholesterol" />
-
-        <TextView
-            android:id="@+id/mealIngredients"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mealTags"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="3dp"
-            android:text="Penne Rigate: 2 cups\nOlive Oil: 1 tsp\nGarlic: 1 clove\nRed Pepper Flakes\nCrushed Tomatoes\nSalt\nBlack Pepper\nFresh Basil\nParmesan Cheese"
-            android:textSize="15sp" />
-
-        <TextView
-            android:id="@+id/mealInstructions"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/mealIngredients"
-            android:layout_marginStart="3dp"
-            android:layout_marginTop="3dp"
-
-            android:layout_marginEnd="3dp"
-            android:layout_marginBottom="3dp"
-            android:text="Bring a large pot of salted water to a boil. Add penne and cook for 8 to 10 minutes or until al dente; drain.\nIn a large skillet over medium heat, heat oil. Add garlic and red pepper flakes; cook and stir until fragrant, about 1 minute. Add crushed tomatoes, salt, and pepper; bring to a simmer. Reduce heat to low and simmer until slightly thickened, about 5 minutes.\nStir in basil and Parmesan cheese. Add cooked penne and toss to coat. Serve immediately."
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/mealVideo"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/mealInstructions"
-            android:text="Youtube Video"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:textColor="@color/teal_700"
+            >
+            <ImageView
+                android:id="@+id/mealImage"
+                android:layout_width="match_parent"
+                android:layout_height="700px"
+                android:src="@drawable/pasta"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/mealimage" />
 
-            />
+            <TextView
+                android:id="@+id/mealName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealImage"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="Spicy Arrabiata Penne"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/mealOrigin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealName"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="Italy"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mealDiet"
+                android:layout_width="101dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealOrigin"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="@string/diet"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/mealDrinkAlternate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealDiet"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="Drink reccomendation: Wine"
+                android:textSize="18sp"
+                />
+
+            <TextView
+                android:id="@+id/mealTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/mealDrinkAlternate"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:text="#vivaLaItalia #pasta #shellfishfree #pescatarian #paleo #whole30 #keto #lowcarb #lowfat #lowcalorie #lowcholesterol" />
+
+            <LinearLayout
+                android:id="@+id/ingredientLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mealTags"
+                android:orientation="horizontal"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                >
+
+            <TextView
+                android:id="@+id/mealIngredients"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_marginEnd="100dp"
+                android:text="Penne Rigate\nOlive Oil\nGarlic\nRed Pepper Flakes\nCrushed Tomatoes\nSalt\nBlack Pepper\nFresh Basil\nParmesan Cheese"
+                android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/mealMeasurements"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginEnd="3dp"
+                    android:layout_marginBottom="3dp"
+                    android:text="Penne Rigate\nOlive Oil\nGarlic\nRed Pepper Flakes\nCrushed Tomatoes\nSalt\nBlack Pepper\nFresh Basil\nParmesan Cheese"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/mealInstructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ingredientLayout"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="3dp"
+
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:text="Bring a large pot of salted water to a boil. Add penne and cook for 8 to 10 minutes or until al dente; drain.\nIn a large skillet over medium heat, heat oil. Add garlic and red pepper flakes; cook and stir until fragrant, about 1 minute. Add crushed tomatoes, salt, and pepper; bring to a simmer. Reduce heat to low and simmer until slightly thickened, about 5 minutes.\nStir in basil and Parmesan cheese. Add cooked penne and toss to coat. Serve immediately."
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mealVideo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/mealInstructions"
+                android:text="Youtube Video"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:textColor="@color/teal_700"
+
+                />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 </LinearLayout>

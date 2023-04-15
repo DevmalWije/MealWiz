@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
+        android:background="@color/teal_100"
         >
 
         <TextView
@@ -23,6 +24,13 @@
             android:textColor="@color/white"
             android:fontFamily="sans-serif-medium"
             />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="127dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/mealwiz_logo_medplusplus"
+            android:contentDescription="@string/applogo" />
         <Button
             android:id="@+id/mealToDbButton"
             android:layout_width="wrap_content"

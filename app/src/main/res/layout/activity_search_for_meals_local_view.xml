@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchMealsWebView"
+    tools:context=".SearchForMealsLocalView"
     >
 
     <LinearLayout
@@ -14,11 +14,11 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/searchMealTextbox"
+            android:id="@+id/searchMealLocalTextbox"
             android:layout_width="223dp"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="@string/search_meal_by_ingredient"
+            android:hint="@string/search"
             android:inputType="text" />
 
         <LinearLayout
@@ -27,25 +27,17 @@
             android:orientation="horizontal"
             android:layout_gravity="center_horizontal"
             >
-        <Button
-            android:id="@+id/RetrieveMealButton"
-            android:layout_width="170dp"
-            android:layout_height="wrap_content"
-            android:text="@string/retrieve_meal"
-            android:layout_margin="5dp"
-             />
-
-        <Button
-            android:id="@+id/SaveMealToDBButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/save_meal_to_db"
-            android:layout_margin="5dp"
-             />
+            <Button
+                android:id="@+id/RetrieveMealLocalButton"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="@string/retrieve_meal"
+                android:layout_margin="5dp"
+                />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mealCardView"
+            android:id="@+id/mealCardLocalView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"

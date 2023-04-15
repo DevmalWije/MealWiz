@@ -8,4 +8,7 @@
     <string name="retrieve_meal">Retrieve Meal</string>
     <string name="save_meal_to_db">Save meal to DB</string>
     <string name="mealimage">mealImage</string>
+    <string name="applogo">appLogo</string>
+    <string name="diet">Diet:</string>
+    <string name="search">search</string>
 </resources>
