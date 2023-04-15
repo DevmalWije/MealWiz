@@ -13,17 +13,21 @@ import androidx.recyclerview.widget.RecyclerView
 import java.net.HttpURLConnection
 import java.net.URL
 
+// MealCardAdapter class
 class MealCardAdapter(private val meals: List<MealObject>, private val ingredients: List<IngredientObject>) :
     RecyclerView.Adapter<MealCardAdapter.MealCardViewHolder>() {
 
+    // MealCardViewHolder class
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealCardViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.meal_card, parent, false)
         return MealCardViewHolder(view)
     }
 
+    // onBindViewHolder function
     override fun onBindViewHolder(holder: MealCardViewHolder, position: Int) {
         val meal = meals[position]
+        // filter ingredients and measurements
         val ingredientsList = ingredients.filter { it.mealId == meal.mealId && it.mealIngredients != " " && it.mealIngredients != "null" && it.mealIngredients.isNotEmpty() }
         val measurementList = ingredients.filter { it.mealId == meal.mealId && it.mealMeasurements != " " && it.mealIngredients != "null" && it.mealIngredients.isNotEmpty() }
         val ingredientString = ingredientsList.joinToString(separator = "\n") { it.mealIngredients }
@@ -59,6 +63,7 @@ class MealCardAdapter(private val meals: List<MealObject>, private val ingredien
     override fun getItemCount(): Int {
         return meals.size
     }
+    // MealCardViewHolder inner class
     inner class MealCardViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var mealImage: ImageView = itemView.findViewById(R.id.mealImage)
         var mealName: TextView = itemView.findViewById(R.id.mealName)

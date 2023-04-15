@@ -4,52 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/teal_100">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:background="@color/teal_100"
+        android:layout_margin="10dp"
         >
-
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-83dp">
         <TextView
+            android:layout_centerHorizontal="true"
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/welcom_to_n_mealwiz"
-            android:layout_margin="10dp"
-            android:textSize="30sp"
-            android:textColor="@color/white"
             android:fontFamily="sans-serif-medium"
-            />
+            android:text="@string/welcom_to_n_mealwiz"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+
         <ImageView
+            android:layout_centerHorizontal="true"
             android:id="@+id/imageView"
+            android:layout_below="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="127dp"
-            android:layout_margin="10dp"
-            android:src="@drawable/mealwiz_logo_medplusplus"
-            android:contentDescription="@string/applogo" />
+            android:contentDescription="@string/applogo"
+            android:src="@drawable/mealwiz_logo_medplusplus" />
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imageView"
+            android:id="@+id/buttons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <Button
             android:id="@+id/mealToDbButton"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/add_meal_to_db"
-            />
+            android:text="@string/add_meal_to_db" />
+
         <Button
             android:id="@+id/searchByIngredientButton"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/search_meal_by_ingredient"
-            />
+            android:text="search meal by\ningredient" />
+
         <Button
             android:id="@+id/searchForMealButton"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="@string/search_for_meal"
-            />
-    </LinearLayout>
+            android:text="@string/search_for_meal" />
 
+        <Button
+            android:id="@+id/searchForMealButtonOnline"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="Search meal by\nname online" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

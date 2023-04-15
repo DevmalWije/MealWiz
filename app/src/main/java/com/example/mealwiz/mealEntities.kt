@@ -2,7 +2,7 @@ package com.example.mealwiz
 
 import androidx.room.*
 
-
+// MealObject class
 @Entity (tableName = "Meals_Table")
 data class MealEntity(
     @PrimaryKey val mealId: Int,
@@ -19,6 +19,7 @@ data class MealEntity(
     @ColumnInfo(name = "Date_Modified") val dateModified:String?,
 )
 
+// IngredientObject class
 @Entity(tableName = "Ingredients_Table")
 data class IngredientEntity(
     @PrimaryKey (autoGenerate = true) val ingredientId: Int=0,

@@ -1,5 +1,6 @@
 package com.example.mealwiz
 
+// MealObject class
 data class MealObject(
     var mealId: String,
     var mealName: String,

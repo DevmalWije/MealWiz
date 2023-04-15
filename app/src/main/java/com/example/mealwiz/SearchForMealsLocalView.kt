@@ -17,7 +17,9 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+//SearchForMealsLocalView.kt
 class SearchForMealsLocalView : AppCompatActivity(){
+    //initialize recycler view and layout manager and adapter for the recycler view
     private lateinit var mealCardRecyclerView: RecyclerView
     private lateinit var mealCardAdapter: MealCardAdapter
     private lateinit var mealCardLayoutManager: RecyclerView.LayoutManager
@@ -29,6 +31,7 @@ class SearchForMealsLocalView : AppCompatActivity(){
         actionBar?.hide()
         setContentView(R.layout.activity_search_for_meals_local_view)
 
+        //initialize meal and ingredient objects
         mealObjects = ArrayList()
         ingredientObjects = ArrayList()
 
@@ -59,19 +62,21 @@ class SearchForMealsLocalView : AppCompatActivity(){
             mealCardAdapter.notifyDataSetChanged()
         }
     }
+    //searchMeals function
     private fun searchMeals(context: Context) {
+        //handler to make toast
         val handler = Handler(Looper.getMainLooper())
         Toast.makeText(context, "Searching for meals", Toast.LENGTH_SHORT).show()
+        //launch coroutine to search for meals
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
+                //getting text from search box
                 val editText = findViewById<EditText>(R.id.searchMealLocalTextbox)
                 val searchText = editText.text.toString().trim()
                 val database = MealsDatabase.getInstance(context)
                 val Dao = database.mealsDao()
+                //searching for meals with ingredients
                 val meals = Dao.searchForMealsWithIngredients(searchText)
-                println("adding meals to list")
-                println(meals.size)
-                println(meals[0].meal.mealName)
                 val newMealObjects = mutableListOf<MealObject>()
                 val newIngredientObjects = mutableListOf<IngredientObject>()
                 for (element in meals) {
@@ -97,9 +102,6 @@ class SearchForMealsLocalView : AppCompatActivity(){
                         mealVideo
                     )
                     newMealObjects.add(mealObject)
-                    for (mealsAdded in newMealObjects) {
-                        println("Added:" +mealsAdded.mealName)
-                    }
                     for (ingredient in element.ingredients) {
                         val ingredientName = ingredient.ingredientName.toString()
                         val ingredientMeasure = ingredient.ingredientMeasure.toString()

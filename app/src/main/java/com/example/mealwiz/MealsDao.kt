@@ -6,13 +6,7 @@ import androidx.room.*
 interface MealsDao {
     @Query("SELECT * FROM Meals_Table")
     fun getAllMeals(): List<MealEntity>
-//
-//    @Query("SELECT * FROM Meals_Table WHERE mealId = :mealId")
-//    fun getMealById(mealId: Int): MealEntity
-//
-//    @Query("SELECT * FROM Meals_Table WHERE Meal_Name LIKE :mealName")
-//    fun getMealByName(mealName: String): MealEntity
-//
+
     @Query("SELECT * FROM Ingredients_Table WHERE ingredient_Name LIKE :meal_ID")
     fun getMealByIngredients(meal_ID: Int): IngredientEntity
 
@@ -32,14 +26,14 @@ interface MealsDao {
             "GROUP BY Meals_Table.mealId")
     fun searchForMealIds(searchQuery: String): List<Int>
 
+    //inserting meal into their respective tables
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMeal(meal: MealEntity): Long
 
+    //inserting list of ingredients into their respective tables
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertIngredient(ingredient: IngredientEntity): Long
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertIngredients(ingredients: List<IngredientEntity>)
-
-
 }
