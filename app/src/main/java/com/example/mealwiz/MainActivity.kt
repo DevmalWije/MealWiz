@@ -1,5 +1,5 @@
 package com.example.mealwiz
-
+//link to video demonstration  https://drive.google.com/file/d/1pQubNTehPypTCRFyg1lTHtnlVOod6fre/view?usp=share_link
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
